@@ -15,11 +15,14 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/xiaomi/cepheus/msmnile.mk)
 
-# Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-
+# Inherit some common Evolution X stuff.
+CUSTOM_BUILD_TYPE := EXPERIMENTAL
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_cepheus
